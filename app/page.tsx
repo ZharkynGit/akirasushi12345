@@ -7,6 +7,7 @@ import TestimonialSection from "@/components/testimonial-section"
 import ContactSection from "@/components/contact-section"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import { Analytics } from "@vercel/analytics/next"
 
 export default function Home() {
   return (
