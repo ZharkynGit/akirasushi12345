@@ -54,7 +54,7 @@ export default function Home() {
                 <div className="absolute -right-2 -top-2 h-full w-full rounded-lg border-2 border-red-600 bg-transparent sm:-right-4 sm:-top-4"></div>
                 <div className="relative z-10 overflow-hidden rounded-lg shadow-lg">
                   <video autoPlay loop muted playsInline className="h-auto w-full" poster="/hero-sushi.jpg">
-                    <source src="/hero-video.mp4" type="video/mp4" />
+                    <source src="https://bf2qguqi7mbhys0j.public.blob.vercel-storage.com/hero-video-N6BSpnfZYeQwdeB1tcEwx227lkAmLr.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                   </video>
                 </div>
