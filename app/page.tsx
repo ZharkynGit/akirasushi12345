@@ -99,7 +99,6 @@ export default function Home() {
                   </div>
                   <div className="ml-0 text-center sm:ml-6 sm:text-left">
                     <h3 className="text-lg font-semibold">Телефоны</h3>
-                    <p className="text-gray-600">+7 707 931 7132</p>
                     <p className="text-gray-600">+7 705 124 2484</p>
                     <p className="text-gray-600">+7 708 397 8591</p>
                   </div>

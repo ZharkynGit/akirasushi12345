@@ -71,7 +71,7 @@ export default function Header() {
               Контакты
             </Button>
             <Button
-              onClick={() => window.open("https://wa.me/77079317132", "_blank")}
+              onClick={() => window.open("https://wa.me/77083978591", "_blank")}
               className="bg-red-600 text-white hover:bg-red-700"
             >
               Заказать
@@ -119,7 +119,7 @@ export default function Header() {
                 Контакты
               </Button>
               <Button
-                onClick={() => window.open("https://wa.me/77079317132", "_blank")}
+                onClick={() => window.open("https://wa.me/77083978591", "_blank")}
                 className="bg-red-600 text-white hover:bg-red-700"
               >
                 Заказать

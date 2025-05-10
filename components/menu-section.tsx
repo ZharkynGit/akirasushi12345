@@ -42,7 +42,7 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="bg-green-600 hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77079317132", "_blank")}
+                      onClick={() => window.open("https://wa.me/77083978591", "_blank")}
                     >
                       Заказать
                     </Button>
@@ -67,7 +67,7 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="bg-green-600 hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77079317132", "_blank")}
+                      onClick={() => window.open("https://wa.me/77083978591", "_blank")}
                     >
                       Заказать
                     </Button>
@@ -92,7 +92,7 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="bg-green-600 hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77079317132", "_blank")}
+                      onClick={() => window.open("https://wa.me/77083978591", "_blank")}
                     >
                       Заказать
                     </Button>
@@ -117,7 +117,7 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="bg-green-600 hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77079317132", "_blank")}
+                      onClick={() => window.open("https://wa.me/77083978591", "_blank")}
                     >
                       Заказать
                     </Button>
@@ -142,7 +142,7 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="bg-green-600 hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77079317132", "_blank")}
+                      onClick={() => window.open("https://wa.me/77083978591", "_blank")}
                     >
                       Заказать
                     </Button>
@@ -171,7 +171,7 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="bg-green-600 hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77079317132?text=Заказ: Крылышки 8 шт", "_blank")}
+                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Крылышки 8 шт", "_blank")}
                     >
                       Заказать
                     </Button>
@@ -181,7 +181,7 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="bg-green-600 hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77079317132?text=Заказ: Крылышки 16 шт", "_blank")}
+                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Крылышки 16 шт", "_blank")}
                     >
                       Заказать
                     </Button>
@@ -191,7 +191,7 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="bg-green-600 hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77079317132?text=Заказ: Крылышки 24 шт", "_blank")}
+                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Крылышки 24 шт", "_blank")}
                     >
                       Заказать
                     </Button>
@@ -219,7 +219,7 @@ export default function MenuSection() {
                   <Button
                     size="sm"
                     className="bg-green-600 hover:bg-green-700"
-                    onClick={() => window.open("https://wa.me/77079317132", "_blank")}
+                    onClick={() => window.open("https://wa.me/77083978591", "_blank")}
                   >
                     Заказать
                   </Button>
@@ -247,7 +247,7 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="bg-green-600 hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77079317132", "_blank")}
+                      onClick={() => window.open("https://wa.me/77083978591", "_blank")}
                     >
                       Заказать
                     </Button>
@@ -273,7 +273,7 @@ export default function MenuSection() {
                       <Button
                         size="sm"
                         className="bg-green-600 hover:bg-green-700"
-                        onClick={() => window.open("https://wa.me/77079317132?text=Заказ: Соус Унаги", "_blank")}
+                        onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Соус Унаги", "_blank")}
                       >
                         Заказать
                       </Button>
@@ -283,7 +283,7 @@ export default function MenuSection() {
                       <Button
                         size="sm"
                         className="bg-green-600 hover:bg-green-700"
-                        onClick={() => window.open("https://wa.me/77079317132?text=Заказ: Фирменный соус", "_blank")}
+                        onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Фирменный соус", "_blank")}
                       >
                         Заказать
                       </Button>
@@ -293,7 +293,7 @@ export default function MenuSection() {
                       <Button
                         size="sm"
                         className="bg-green-600 hover:bg-green-700"
-                        onClick={() => window.open("https://wa.me/77079317132?text=Заказ: Соус шрирача", "_blank")}
+                        onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Соус шрирача", "_blank")}
                       >
                         Заказать
                       </Button>
@@ -320,7 +320,7 @@ export default function MenuSection() {
                       <Button
                         size="sm"
                         className="bg-green-600 hover:bg-green-700"
-                        onClick={() => window.open("https://wa.me/77079317132?text=Заказ: Васаби", "_blank")}
+                        onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Васаби", "_blank")}
                       >
                         Заказать
                       </Button>
@@ -330,7 +330,7 @@ export default function MenuSection() {
                       <Button
                         size="sm"
                         className="bg-green-600 hover:bg-green-700"
-                        onClick={() => window.open("https://wa.me/77079317132?text=Заказ: Имбирь", "_blank")}
+                        onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Имбирь", "_blank")}
                       >
                         Заказать
                       </Button>
@@ -340,7 +340,7 @@ export default function MenuSection() {
                       <Button
                         size="sm"
                         className="bg-green-600 hover:bg-green-700"
-                        onClick={() => window.open("https://wa.me/77079317132?text=Заказ: Соевый соус", "_blank")}
+                        onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Соевый соус", "_blank")}
                       >
                         Заказать
                       </Button>

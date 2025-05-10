@@ -39,7 +39,6 @@ export default function ContactSection() {
                   <Phone className="mr-3 h-5 w-5 shrink-0 text-red-600" />
                   <div>
                     <p className="font-medium">Телефоны</p>
-                    <p className="text-gray-600">+7 707 931 7132</p>
                     <p className="text-gray-600">+7 705 124 2484</p>
                     <p className="text-gray-600">+7 708 397 8591</p>
                   </div>
@@ -58,12 +57,12 @@ export default function ContactSection() {
               <div className="mt-6 flex flex-col space-y-3">
                 <Button
                   className="w-full bg-green-600 hover:bg-green-700"
-                  onClick={() => window.open("https://wa.me/77079317132", "_blank")}
+                  onClick={() => window.open("https://wa.me/7083978591", "_blank")}
                 >
                   <Send className="mr-2 h-5 w-5" />
                   Заказать через WhatsApp
                 </Button>
-                <Button variant="outline" className="w-full" onClick={() => window.open("tel:+77079317132", "_blank")}>
+                <Button variant="outline" className="w-full" onClick={() => window.open("tel:+77083978591", "_blank")}>
                   <Phone className="mr-2 h-5 w-5" />
                   Позвонить
                 </Button>
