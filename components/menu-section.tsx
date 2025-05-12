@@ -16,13 +16,40 @@ export default function MenuSection() {
         </div>
 
         <Tabs defaultValue="rolls" className="w-full">
-          <TabsList className="mb-16 grid w-full grid-cols-2 gap-2 md:grid-cols-5">
-            <TabsTrigger value="rolls">Роллы</TabsTrigger>
-            <TabsTrigger value="pizza">Пицца</TabsTrigger>
-            <TabsTrigger value="wings">Крылышки</TabsTrigger>
-            <TabsTrigger value="snacks">Закуски</TabsTrigger>
-            <TabsTrigger value="sauces">Соусы</TabsTrigger>
-          </TabsList>
+          <div className="tabs-container">
+            <TabsList className="mb-16 grid w-full grid-cols-2 gap-2 rounded-lg border border-gray-200 bg-white p-1 shadow-md md:grid-cols-5">
+              <TabsTrigger
+                value="rolls"
+                className="data-[state=active]:bg-red-600 data-[state=active]:text-white data-[state=active]:shadow-sm"
+              >
+                Роллы
+              </TabsTrigger>
+              <TabsTrigger
+                value="pizza"
+                className="data-[state=active]:bg-red-600 data-[state=active]:text-white data-[state=active]:shadow-sm"
+              >
+                Пицца
+              </TabsTrigger>
+              <TabsTrigger
+                value="wings"
+                className="data-[state=active]:bg-red-600 data-[state=active]:text-white data-[state=active]:shadow-sm"
+              >
+                Крылышки
+              </TabsTrigger>
+              <TabsTrigger
+                value="snacks"
+                className="data-[state=active]:bg-red-600 data-[state=active]:text-white data-[state=active]:shadow-sm"
+              >
+                Закуски
+              </TabsTrigger>
+              <TabsTrigger
+                value="sauces"
+                className="data-[state=active]:bg-red-600 data-[state=active]:text-white data-[state=active]:shadow-sm"
+              >
+                Соусы
+              </TabsTrigger>
+            </TabsList>
+          </div>
 
           <TabsContent value="rolls" className="mt-6">
             <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
@@ -1303,31 +1330,6 @@ export default function MenuSection() {
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
                       onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Фирменный соус", "_blank")}
-                    >
-                      Заказать
-                    </Button>
-                  </div>
-                </div>
-              </Card>
-
-              <Card className="overflow-hidden border border-gray-200 bg-white shadow-md">
-                <div className="p-3">
-                  <div className="overflow-hidden rounded-lg bg-gray-100 shadow-inner" style={{ height: "240px" }}>
-                    <Image
-                      src="/menu/sriracha-sauce.jpeg"
-                      alt="Соус шрирача"
-                      width={300}
-                      height={200}
-                      className="h-full w-full object-contain"
-                    />
-                  </div>
-                  <h3 className="mt-3 text-base font-semibold line-clamp-2">Соус шрирача</h3>
-                  <div className="mt-2 flex items-center justify-between">
-                    <span className="text-sm font-bold text-red-600">200 ₸</span>
-                    <Button
-                      size="sm"
-                      className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Соус шрирача", "_blank")}
                     >
                       Заказать
                     </Button>

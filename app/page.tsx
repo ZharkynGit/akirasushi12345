@@ -19,15 +19,15 @@ export default function Home() {
         </div>
 
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-r from-red-50 to-white pt-20 md:pt-28" id="home">
+        <section className="relative bg-gradient-to-r from-red-50 to-white pt-16 md:pt-24" id="home">
           <div className="absolute left-0 top-0 h-full w-full overflow-hidden">
             <div className="absolute -right-16 -top-16 h-64 w-64 rounded-full bg-red-100 opacity-40"></div>
             <div className="absolute left-1/3 top-1/4 h-32 w-32 rounded-full bg-red-100 opacity-30"></div>
           </div>
 
-          <div className="container mx-auto px-4 py-12 md:py-20">
+          <div className="container mx-auto px-4 py-8 md:py-16">
             <div className="flex flex-col items-center md:flex-row md:justify-between">
-              <div className="mb-8 rounded-lg bg-white/95 p-6 shadow-sm md:mb-0 md:w-1/2">
+              <div className="mb-8 w-full rounded-lg bg-white/95 p-6 shadow-sm md:mb-0 md:w-1/2">
                 <h1 className="mb-3 text-center text-3xl font-bold text-gray-900 md:text-left md:text-5xl">
                   Akira Sushi <span className="text-red-600">TDK</span>
                 </h1>

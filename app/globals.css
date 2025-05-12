@@ -120,3 +120,16 @@
   background-color: white;
   padding: 0 10px;
 }
+
+/* Custom styles for tabs */
+.tabs-container {
+  
+  top: 80px;
+  z-index: 20;
+  background-color: white;
+  padding: 8px 0;
+}
+
+[data-state="active"][data-orientation="horizontal"] {
+  font-weight: 600;
+}
