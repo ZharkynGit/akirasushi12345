@@ -7,7 +7,6 @@ import TestimonialSection from "@/components/testimonial-section"
 import ContactSection from "@/components/contact-section"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
-import { Analytics } from "@vercel/analytics/next"
 
 export default function Home() {
   return (
@@ -28,7 +27,7 @@ export default function Home() {
 
           <div className="container mx-auto px-4 py-12 md:py-20">
             <div className="flex flex-col items-center md:flex-row md:justify-between">
-              <div className="mb-8 md:mb-0 md:w-1/2">
+              <div className="mb-8 rounded-lg bg-white/95 p-6 shadow-sm md:mb-0 md:w-1/2">
                 <h1 className="mb-3 text-center text-3xl font-bold text-gray-900 md:text-left md:text-5xl">
                   Akira Sushi <span className="text-red-600">TDK</span>
                 </h1>
@@ -55,7 +54,10 @@ export default function Home() {
                 <div className="absolute -right-2 -top-2 h-full w-full rounded-lg border-2 border-red-600 bg-transparent sm:-right-4 sm:-top-4"></div>
                 <div className="relative z-10 overflow-hidden rounded-lg shadow-lg">
                   <video autoPlay loop muted playsInline className="h-auto w-full" poster="/hero-sushi.jpg">
-                    <source src="https://bf2qguqi7mbhys0j.public.blob.vercel-storage.com/hero-video-N6BSpnfZYeQwdeB1tcEwx227lkAmLr.mp4" type="video/mp4" />
+                    <source
+                      src="https://bf2qguqi7mbhys0j.public.blob.vercel-storage.com/hero-video-N6BSpnfZYeQwdeB1tcEwx227lkAmLr.mp4"
+                      type="video/mp4"
+                    />
                     Your browser does not support the video tag.
                   </video>
                 </div>
@@ -68,10 +70,10 @@ export default function Home() {
         </section>
 
         {/* Info Cards */}
-        <section className="bg-white py-12">
+        <section className="bg-white py-12 shadow-sm">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-              <Card className="border border-gray-100 bg-white p-0 transition-transform hover:scale-105 hover:shadow-lg">
+              <Card className="border border-gray-200 bg-white p-0 shadow-md transition-transform hover:scale-105 hover:shadow-lg">
                 <CardContent className="flex flex-col items-center p-6 sm:flex-row">
                   <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-red-50 sm:mb-0">
                     <Clock className="h-8 w-8 text-red-600" />
@@ -82,7 +84,7 @@ export default function Home() {
                   </div>
                 </CardContent>
               </Card>
-              <Card className="border border-gray-100 bg-white p-0 transition-transform hover:scale-105 hover:shadow-lg">
+              <Card className="border border-gray-200 bg-white p-0 shadow-md transition-transform hover:scale-105 hover:shadow-lg">
                 <CardContent className="flex flex-col items-center p-6 sm:flex-row">
                   <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-red-50 sm:mb-0">
                     <MapPin className="h-8 w-8 text-red-600" />
@@ -93,7 +95,7 @@ export default function Home() {
                   </div>
                 </CardContent>
               </Card>
-              <Card className="border border-gray-100 bg-white p-0 transition-transform hover:scale-105 hover:shadow-lg">
+              <Card className="border border-gray-200 bg-white p-0 shadow-md transition-transform hover:scale-105 hover:shadow-lg">
                 <CardContent className="flex flex-col items-center p-6 sm:flex-row">
                   <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-red-50 sm:mb-0">
                     <Phone className="h-8 w-8 text-red-600" />
@@ -118,7 +120,7 @@ export default function Home() {
             <div className="w-full border-t border-gray-200"></div>
           </div>
           <div className="relative flex justify-center">
-            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-gray-200 bg-white">
+            <div className="flex h-12 w-12 items-center justify-center rounded-full border border-gray-200 bg-white shadow">
               <span className="font-japanese text-xl text-red-600">寿司</span>
             </div>
           </div>

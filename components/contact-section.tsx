@@ -6,7 +6,7 @@ import { Phone, Clock, MapPin, Send } from "lucide-react"
 
 export default function ContactSection() {
   return (
-    <section className="bg-gray-50 py-16" id="contact">
+    <section className="bg-gray-50 py-16 shadow-sm" id="contact">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold text-gray-900 md:text-4xl">Контакты</h2>
@@ -14,7 +14,7 @@ export default function ContactSection() {
         </div>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-          <Card>
+          <Card className="border border-gray-200 bg-white shadow-md">
             <CardContent className="p-6">
               <h3 className="mb-4 text-xl font-semibold">Информация</h3>
 

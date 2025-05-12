@@ -32,7 +32,7 @@ export default function TestimonialSection() {
   ]
 
   return (
-    <section className="bg-white py-16" id="testimonials">
+    <section className="bg-white py-16 shadow-sm" id="testimonials">
       <div className="container mx-auto px-4">
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold text-gray-900 md:text-4xl">Отзывы наших клиентов</h2>
@@ -41,7 +41,7 @@ export default function TestimonialSection() {
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((testimonial) => (
-            <Card key={testimonial.id} className="h-full">
+            <Card key={testimonial.id} className="h-full border border-gray-200 bg-white shadow-md">
               <CardContent className="flex h-full flex-col p-6">
                 <div className="mb-4 flex">
                   {[...Array(5)].map((_, i) => (
