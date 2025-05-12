@@ -71,14 +71,7 @@ export default function ContactSection() {
           </Card>
 
           <div className="h-[300px] overflow-hidden rounded-lg shadow-lg md:h-[400px]">
-            <iframe
-              src="https://yandex.ru/map-widget/v1/?um=constructor%3A123456789&amp;source=constructor&amp;scroll=false&amp;ll=78.358463%2C45.015098&amp;z=16"
-              width="100%"
-              height="100%"
-              frameBorder="0"
-              style={{ border: 0 }}
-              allowFullScreen
-            ></iframe>
+            <iframe src="https://yandex.com/map-widget/v1/?um=constructor%3A4bbbcedd5418114b3e3a7323c15cc869efbf311fb76b92a5276307c972d5474e&amp;source=constructor" width="619" height="498" frameBorder="0"></iframe>
           </div>
         </div>
       </div>
