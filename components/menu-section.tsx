@@ -4,9 +4,28 @@ import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import Image from "next/image"
-import { Instagram } from "lucide-react"
+import { Instagram, ShoppingCart } from "lucide-react"
+import { useCart } from "@/context/cart-context"
+import { useToast } from "@/components/ui/use-toast"
+import { ToastAction } from "@/components/ui/toast"
 
 export default function MenuSection() {
+  const { addItem, setIsCartOpen } = useCart()
+  const { toast } = useToast()
+
+  const handleAddToCart = (id: string, name: string, price: number, image: string) => {
+    addItem({ id, name, price, image })
+    toast({
+      title: "Добавлено в корзину",
+      description: name,
+      action: (
+        <ToastAction altText="Перейти в корзину" onClick={() => setIsCartOpen(true)}>
+          Перейти в корзину
+        </ToastAction>
+      ),
+    })
+  }
+
   return (
     <section className="bg-white py-16 shadow-sm" id="menu">
       <div className="container mx-auto px-4">
@@ -70,9 +89,9 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Филадельфия", "_blank")}
+                      onClick={() => handleAddToCart("philadelphia", "Филадельфия", 2200, "/menu/philadelphia.jpeg")}
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -95,9 +114,11 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Филадельфия Лайт", "_blank")}
+                      onClick={() =>
+                        handleAddToCart("philadelphia-light", "Филадельфия Лайт", 2300, "/menu/philadelphia-light.jpeg")
+                      }
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -121,10 +142,15 @@ export default function MenuSection() {
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
                       onClick={() =>
-                        window.open("https://wa.me/77083978591?text=Заказ: Филадельфия Запеченный", "_blank")
+                        handleAddToCart(
+                          "philadelphia-baked",
+                          "Филадельфия Запеченный",
+                          2500,
+                          "/menu/philadelphia-baked.jpeg",
+                        )
                       }
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -147,9 +173,9 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Калифорния", "_blank")}
+                      onClick={() => handleAddToCart("california", "Калифорния", 1800, "/menu/california.jpeg")}
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -173,10 +199,15 @@ export default function MenuSection() {
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
                       onClick={() =>
-                        window.open("https://wa.me/77083978591?text=Заказ: Калифорния Запеченный", "_blank")
+                        handleAddToCart(
+                          "california-baked",
+                          "Калифорния Запеченный",
+                          1900,
+                          "/menu/california-baked.jpeg",
+                        )
                       }
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -199,9 +230,11 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Цезарь Запеченный", "_blank")}
+                      onClick={() =>
+                        handleAddToCart("caesar-baked", "Цезарь Запеченный", 1800, "/menu/caesar-baked.jpeg")
+                      }
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -224,9 +257,11 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Цезарь Темпура", "_blank")}
+                      onClick={() =>
+                        handleAddToCart("caesar-tempura", "Цезарь Темпура", 1600, "/menu/caesar-tempura.jpeg")
+                      }
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -249,9 +284,9 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Чиз Ролл", "_blank")}
+                      onClick={() => handleAddToCart("cheese-roll", "Чиз Ролл", 1800, "/menu/cheese-roll.jpeg")}
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -274,9 +309,11 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Ролл Пармезан", "_blank")}
+                      onClick={() =>
+                        handleAddToCart("parmesan-roll", "Ролл Пармезан", 1800, "/menu/parmesan-roll.jpeg")
+                      }
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -299,9 +336,9 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Бонито Маки", "_blank")}
+                      onClick={() => handleAddToCart("bonito-maki", "Бонито Маки", 1900, "/menu/bonito-maki.jpeg")}
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -325,10 +362,10 @@ export default function MenuSection() {
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
                       onClick={() =>
-                        window.open("https://wa.me/77083978591?text=Заказ: Кимпаб с лососем и сыром", "_blank")
+                        handleAddToCart("salmon-kimbap", "Кимпаб с лососем и сыром", 1860, "/menu/salmon-kimbap.jpeg")
                       }
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -351,9 +388,11 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Терияки Чикен", "_blank")}
+                      onClick={() =>
+                        handleAddToCart("teriyaki-chicken", "Терияки Чикен", 1798, "/menu/teriyaki-chicken.jpeg")
+                      }
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -377,10 +416,15 @@ export default function MenuSection() {
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
                       onClick={() =>
-                        window.open("https://wa.me/77083978591?text=Заказ: Кимпаб с курицей терияки", "_blank")
+                        handleAddToCart(
+                          "chicken-teriyaki-kimbap",
+                          "Кимпаб с курицей терияки",
+                          1798,
+                          "/menu/chicken-teriyaki-kimbap.jpeg",
+                        )
                       }
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -403,9 +447,11 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Кимпаб классический", "_blank")}
+                      onClick={() =>
+                        handleAddToCart("classic-kimbap", "Кимпаб классический", 1550, "/menu/classic-kimbap.jpeg")
+                      }
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -428,9 +474,11 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Овощной Кимпаб", "_blank")}
+                      onClick={() =>
+                        handleAddToCart("vegetable-kimbap", "Овощной Кимпаб", 1488, "/menu/vegetable-kimbap.jpeg")
+                      }
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -453,9 +501,16 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Филадельфия Гриль", "_blank")}
+                      onClick={() =>
+                        handleAddToCart(
+                          "philadelphia-grill",
+                          "Филадельфия Гриль",
+                          2300,
+                          "/menu/philadelphia-grill.jpeg",
+                        )
+                      }
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -478,9 +533,9 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Аляска Маки", "_blank")}
+                      onClick={() => handleAddToCart("alaska-maki", "Аляска Маки", 2000, "/menu/alaska-maki.jpeg")}
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -503,9 +558,9 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Дракон Маки", "_blank")}
+                      onClick={() => handleAddToCart("dragon-maki", "Дракон Маки", 2200, "/menu/dragon-maki.jpeg")}
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -529,10 +584,15 @@ export default function MenuSection() {
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
                       onClick={() =>
-                        window.open("https://wa.me/77083978591?text=Заказ: Аляска Маки Запеченный", "_blank")
+                        handleAddToCart(
+                          "alaska-maki-baked",
+                          "Аляска Маки Запеченный",
+                          2300,
+                          "/menu/alaska-maki-baked.jpeg",
+                        )
                       }
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -555,9 +615,9 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Чиз Ролл", "_blank")}
+                      onClick={() => handleAddToCart("cheese-roll-2", "Чиз Ролл", 1700, "/menu/cheese-roll-2.jpeg")}
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -580,9 +640,9 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Краб Темпура", "_blank")}
+                      onClick={() => handleAddToCart("crab-tempura", "Краб Темпура", 1500, "/menu/crab-tempura.jpeg")}
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -605,9 +665,9 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Фреш Ролл", "_blank")}
+                      onClick={() => handleAddToCart("fresh-roll", "Фреш Ролл", 1900, "/menu/fresh-roll.jpeg")}
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -631,10 +691,15 @@ export default function MenuSection() {
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
                       onClick={() =>
-                        window.open("https://wa.me/77083978591?text=Заказ: Калифорния с креветкой", "_blank")
+                        handleAddToCart(
+                          "california-shrimp",
+                          "Калифорния с креветкой",
+                          2000,
+                          "/menu/california-shrimp.jpeg",
+                        )
                       }
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -657,9 +722,9 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Фила Гринн", "_blank")}
+                      onClick={() => handleAddToCart("phila-green", "Фила Гринн", 1900, "/menu/phila-green.jpeg")}
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -682,9 +747,9 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Угорь Темпура", "_blank")}
+                      onClick={() => handleAddToCart("eel-tempura", "Угорь Темпура", 1900, "/menu/eel-tempura.jpeg")}
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -707,9 +772,9 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Cake Запеченный", "_blank")}
+                      onClick={() => handleAddToCart("cake-baked", "Cake Запеченный", 2000, "/menu/cake-baked.jpeg")}
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -732,9 +797,9 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Каппа Маки", "_blank")}
+                      onClick={() => handleAddToCart("kappa-maki", "Каппа Маки", 1000, "/menu/kappa-maki.jpeg")}
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -757,9 +822,9 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Сяке Маки", "_blank")}
+                      onClick={() => handleAddToCart("sake-maki", "Сяке Маки", 1200, "/menu/sake-maki.jpeg")}
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -782,9 +847,9 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Cake Темпура", "_blank")}
+                      onClick={() => handleAddToCart("cake-tempura", "Cake Темпура", 1800, "/menu/cake-tempura.jpeg")}
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -807,9 +872,9 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Краб Запеченный", "_blank")}
+                      onClick={() => handleAddToCart("crab-baked", "Краб Запеченный", 1600, "/menu/crab-baked.jpeg")}
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -833,10 +898,15 @@ export default function MenuSection() {
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
                       onClick={() =>
-                        window.open("https://wa.me/77083978591?text=Заказ: Каппа Маки Запеченный", "_blank")
+                        handleAddToCart(
+                          "kappa-maki-baked",
+                          "Каппа Маки Запеченный",
+                          1300,
+                          "/menu/kappa-maki-baked.jpeg",
+                        )
                       }
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -865,10 +935,15 @@ export default function MenuSection() {
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
                       onClick={() =>
-                        window.open("https://wa.me/77083978591?text=Заказ: Пицца Курица с грибами", "_blank")
+                        handleAddToCart(
+                          "pizza-chicken-mushroom",
+                          "Пицца Курица с грибами",
+                          2100,
+                          "/menu/pizza-chicken-mushroom.jpeg",
+                        )
                       }
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -891,9 +966,11 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Пицца 4 Сезона", "_blank")}
+                      onClick={() =>
+                        handleAddToCart("pizza-four-seasons", "Пицца 4 Сезона", 2300, "/menu/pizza-four-seasons.jpeg")
+                      }
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -916,9 +993,11 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Пицца Грибной", "_blank")}
+                      onClick={() =>
+                        handleAddToCart("pizza-mushroom", "Пицца Грибной", 1600, "/menu/pizza-mushroom.jpeg")
+                      }
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -941,9 +1020,11 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Пицца Болоньез", "_blank")}
+                      onClick={() =>
+                        handleAddToCart("pizza-bolognese", "Пицца Болоньез", 2300, "/menu/pizza-bolognese.jpeg")
+                      }
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -966,9 +1047,11 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Пицца Маргарита", "_blank")}
+                      onClick={() =>
+                        handleAddToCart("pizza-margherita", "Пицца Маргарита", 1600, "/menu/pizza-margherita.jpeg")
+                      }
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -992,10 +1075,15 @@ export default function MenuSection() {
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
                       onClick={() =>
-                        window.open("https://wa.me/77083978591?text=Заказ: Пицца Ветчина с грибами", "_blank")
+                        handleAddToCart(
+                          "pizza-ham-mushroom",
+                          "Пицца Ветчина с грибами",
+                          2500,
+                          "/menu/pizza-ham-mushroom.jpeg",
+                        )
                       }
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -1018,9 +1106,11 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Пицца Пепперони", "_blank")}
+                      onClick={() =>
+                        handleAddToCart("pizza-pepperoni", "Пицца Пепперони", 2000, "/menu/pizza-pepperoni.jpeg")
+                      }
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -1044,10 +1134,10 @@ export default function MenuSection() {
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
                       onClick={() =>
-                        window.open("https://wa.me/77083978591?text=Заказ: Пицца Охотничья колбаски", "_blank")
+                        handleAddToCart("pizza-hunters", "Пицца Охотничья колбаски", 2300, "/menu/pizza-hunters.jpeg")
                       }
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -1070,9 +1160,11 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Пицца Куриный", "_blank")}
+                      onClick={() =>
+                        handleAddToCart("pizza-chicken", "Пицца Куриный", 2000, "/menu/pizza-chicken.jpeg")
+                      }
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -1100,9 +1192,9 @@ export default function MenuSection() {
                       <Button
                         size="sm"
                         className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                        onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Крылышки 8 шт", "_blank")}
+                        onClick={() => handleAddToCart("wings-8", "Крылышки 8 шт", 2000, "/menu/chicken-wings.jpeg")}
                       >
-                        Заказать
+                        <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                       </Button>
                     </div>
                     <div className="flex items-center justify-between">
@@ -1110,9 +1202,9 @@ export default function MenuSection() {
                       <Button
                         size="sm"
                         className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                        onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Крылышки 16 шт", "_blank")}
+                        onClick={() => handleAddToCart("wings-16", "Крылышки 16 шт", 4500, "/menu/chicken-wings.jpeg")}
                       >
-                        Заказать
+                        <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                       </Button>
                     </div>
                     <div className="flex items-center justify-between">
@@ -1120,9 +1212,9 @@ export default function MenuSection() {
                       <Button
                         size="sm"
                         className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                        onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Крылышки 24 шт", "_blank")}
+                        onClick={() => handleAddToCart("wings-24", "Крылышки 24 шт", 5600, "/menu/chicken-wings.jpeg")}
                       >
-                        Заказать
+                        <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                       </Button>
                     </div>
                   </div>
@@ -1150,9 +1242,9 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Корн-Дог 5 шт", "_blank")}
+                      onClick={() => handleAddToCart("corn-dog", "Корн-Дог 5 шт", 900, "/menu/corn-dog.jpeg")}
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -1179,9 +1271,9 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Васаби", "_blank")}
+                      onClick={() => handleAddToCart("wasabi", "Васаби", 200, "/menu/wasabi-portion.jpeg")}
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -1204,9 +1296,9 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Имбирь", "_blank")}
+                      onClick={() => handleAddToCart("ginger", "Имбирь", 200, "/menu/ginger-portion.jpeg")}
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -1229,9 +1321,9 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Соя соус", "_blank")}
+                      onClick={() => handleAddToCart("soy-sauce", "Соя соус", 200, "/menu/soy-sauce-portion.jpeg")}
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -1254,9 +1346,11 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Чесночный соус", "_blank")}
+                      onClick={() =>
+                        handleAddToCart("garlic-sauce", "Чесночный соус", 200, "/menu/garlic-sauce-portion.jpeg")
+                      }
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -1279,9 +1373,9 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Сырный соус", "_blank")}
+                      onClick={() => handleAddToCart("cheese-sauce", "Сырный соус", 200, "/menu/cheese-sauce.jpeg")}
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -1304,9 +1398,9 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Соус Унаги", "_blank")}
+                      onClick={() => handleAddToCart("unagi-sauce", "Соус Унаги", 300, "/menu/unagi-sauce.jpeg")}
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>
@@ -1329,9 +1423,11 @@ export default function MenuSection() {
                     <Button
                       size="sm"
                       className="h-8 bg-green-600 px-2 text-xs hover:bg-green-700"
-                      onClick={() => window.open("https://wa.me/77083978591?text=Заказ: Фирменный соус", "_blank")}
+                      onClick={() =>
+                        handleAddToCart("signature-sauce", "Фирменный соус", 200, "/menu/signature-sauce.jpeg")
+                      }
                     >
-                      Заказать
+                      <ShoppingCart className="mr-1 h-3 w-3" />В корзину
                     </Button>
                   </div>
                 </div>

@@ -7,6 +7,8 @@ import TestimonialSection from "@/components/testimonial-section"
 import ContactSection from "@/components/contact-section"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import FloatingCartButton from "@/components/floating-cart-button"
+import { Toaster } from "@/components/ui/toaster"
 
 export default function Home() {
   return (
@@ -134,6 +136,12 @@ export default function Home() {
 
         {/* Footer */}
         <Footer />
+
+        {/* Floating Cart Button */}
+        <FloatingCartButton />
+
+        {/* Toast Notifications */}
+        <Toaster />
       </main>
     </>
   )
