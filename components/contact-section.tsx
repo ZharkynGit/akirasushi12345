@@ -50,6 +50,8 @@ export default function ContactSection() {
                     <p className="font-medium">Доставка</p>
                     <p className="text-gray-600">В течение 80 минут</p>
                     <p className="text-gray-600">Без минимальной суммы заказа</p>
+                    <p className="mt-1 font-medium text-red-600">✅ Доставка по городу бесплатно</p>
+                    <p className="text-red-600">🆘 После 22:00 до 10:00 доставка по городу 500 Тг</p>
                   </div>
                 </div>
               </div>
@@ -71,7 +73,12 @@ export default function ContactSection() {
           </Card>
 
           <div className="h-[300px] overflow-hidden rounded-lg shadow-lg md:h-[400px]">
-            <iframe src="https://yandex.com/map-widget/v1/?um=constructor%3A4bbbcedd5418114b3e3a7323c15cc869efbf311fb76b92a5276307c972d5474e&amp;source=constructor" width="619" height="498" frameBorder="0"></iframe>
+            <iframe
+              src="https://yandex.com/map-widget/v1/?um=constructor%3A4bbbcedd5418114b3e3a7323c15cc869efbf311fb76b92a5276307c972d5474e&amp;source=constructor"
+              width="619"
+              height="498"
+              frameBorder="0"
+            ></iframe>
           </div>
         </div>
       </div>

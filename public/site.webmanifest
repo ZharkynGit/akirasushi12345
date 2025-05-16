@@ -1,5 +1,5 @@
 {
-  "name": "Akira Sushi",
+  "name": "Akira Sushi TDK - Доставка суши и пиццы в Талдыкоргане 24/7",
   "short_name": "Akira Sushi",
   "icons": [
     {
@@ -13,7 +13,8 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#ffffff",
+  "theme_color": "#ff0000",
   "background_color": "#ffffff",
-  "display": "standalone"
+  "display": "standalone",
+  "description": "Доставка суши, роллов и пиццы в Талдыкоргане круглосуточно. Бесплатная доставка по городу."
 }

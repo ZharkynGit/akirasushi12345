@@ -38,6 +38,12 @@ export default function Home() {
                   Место, где японские традиции встречаются с современным вкусом. Мы готовим свежие суши и роллы с душой,
                   используя только качественные ингредиенты. Быстрая доставка и забота о каждом госте — наш приоритет.
                 </p>
+                <div className="mt-4 rounded-lg bg-red-50 p-3 text-sm text-gray-800">
+                  <p className="font-medium text-red-600">Информация о доставке:</p>
+                  <p className="mt-1">✅ Доставка по городу бесплатно</p>
+                  <p>🆘 После 22:00 до 10:00 доставка по городу 500 Тг</p>
+                  <p>⏰ ГРАФИК РАБОТЫ 24/7 🆘</p>
+                </div>
                 <div className="relative mt-8 flex flex-col justify-center gap-4 sm:flex-row md:justify-start">
                   <Button
                     size="lg"
@@ -82,7 +88,7 @@ export default function Home() {
                   </div>
                   <div className="ml-0 text-center sm:ml-6 sm:text-left">
                     <h3 className="text-lg font-semibold">Время работы</h3>
-                    <p className="text-gray-600">Работаем 24/7</p>
+                    <p className="text-gray-600">⏰ ГРАФИК РАБОТЫ 24/7 🆘</p>
                   </div>
                 </CardContent>
               </Card>
