@@ -68,6 +68,18 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <head>
+        {/* Google tag (gtag.js) */}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-3PHNRBFN1K"></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-3PHNRBFN1K');
+            `
+          }}
+        />
         <meta name="geo.region" content="KZ-TAL" />
         <meta name="geo.placename" content="Талдыкорган" />
         <link rel="canonical" href="https://akirasushi.kz" />
